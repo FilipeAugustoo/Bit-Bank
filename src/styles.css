@@ -127,10 +127,8 @@ table {
   border-spacing: 0;
 }
 
-html {
-  background-image: url("assets/img/background.jpg");
-  background-attachment: fixed;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
+html, body {
+  background-color: white;
+  height: 100%;
+  width: 100%;
 }

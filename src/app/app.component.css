@@ -1,28 +1,48 @@
 header {
-  width: 100%;
-  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
 }
 
 .menu-principal {
-  height: 20%;
-  background-color: gray;
+  background-image: linear-gradient(to bottom, #f7931a 93%, white);
+  height: 16%;
 }
 
 .logo img {
-  width: 5%;
-  margin-top: 0.5%;
+  text-align: center;
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
 }
 
 .logo {
+  position: relative;
   text-align: center;
 }
 
-h2 {
-  position: absolute;
+.usuario {
+  width: 20%;
   text-align: center;
+}
+
+.usuario h3 {
   font-size: 1.5rem;
-  margin-top: -5%;
-  margin-left: 85%;
+  margin-bottom: 5%;
+}
+
+.usuario a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  font-size: 1.5rem;
+  width: 20%;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
