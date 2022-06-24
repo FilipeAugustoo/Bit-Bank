@@ -1,0 +1,64 @@
+<main class="principal">
+  <form
+    class="form-principal"
+    [formGroup]="novoUsuarioForm"
+    (submit)="cadastrar()"
+  >
+    <div>
+      <label class="label" for="usuario">Usuário:</label>
+      <input
+        class="inputs"
+        type="text"
+        name="usuario"
+        id="usuario"
+        formControlName="usuario"
+      />
+    </div>
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('usuario')?.errors?.minusculo &&
+        novoUsuarioForm.get('usuario')?.touched
+      "
+      mensagem="Usuário Deve Ser Em Letras Minúsculas"
+    >
+    </app-mensagem>
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('usuario')?.errors?.required &&
+        novoUsuarioForm.get('usuario')?.touched
+      "
+      mensagem="Usuário Obrigatório"
+    >
+    </app-mensagem>
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('usuario')?.errors?.usuarioExistente"
+      mensagem="Usuário Já Existe"
+    ></app-mensagem>
+    <div>
+      <label class="label" for="senha">Senha:</label>
+      <input
+        class="inputs"
+        type="password"
+        name="senha"
+        id="senha"
+        formControlName="senha"
+      />
+      <app-mensagem
+        *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario"
+        mensagem="Senha Não Pode Ser Igual Usuário"
+      ></app-mensagem>
+      <app-mensagem
+        *ngIf="
+          novoUsuarioForm.get('senha')?.errors?.required &&
+          novoUsuarioForm.get('senha')?.touched
+        "
+        mensagem="Senha Obrigatória"
+      ></app-mensagem>
+    </div>
+    <input type="hidden" name="saldo" value="0" formControlName="saldo">
+    <button type="submit" class="btn">Cadastrar</button>
+    <p class="texto">
+      Ja é um usuário?<a [routerLink]="['/login']"> Faça o Login!</a>
+    </p>
+  </form>
+</main>

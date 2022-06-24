@@ -1,0 +1,42 @@
+.container {
+  margin: 3% auto;
+  text-align: center;
+  width: 50%;
+  height: 74vh;
+  backdrop-filter: saturate(180%) blur(6px);
+  border-radius: 10px;
+}
+
+.tabela {
+  text-align: center;
+  margin: 5% auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.detalhes {
+  padding: 10px;
+  border-bottom: 2px solid gray;
+}
+
+.conteudo {
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.valores {
+  padding: 10px;
+  border-bottom: none;
+}
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 5% auto;
+    width: 75%;
+  }
+
+  .tabela {
+    width: 60%;
+  }
+}

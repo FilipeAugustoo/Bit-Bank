@@ -1,0 +1,44 @@
+<main class="container">
+  <div class="itens">
+    <li (click)="tipoCpf()" id="cpf" class="itens-hover" [style]="stylePadrao">CPF</li>
+    <li (click)="tipoCnpj()" id="cnpj" class="itens-hover">CNPJ</li>
+    <li (click)="tipoTelefone()" id="telefone" class="itens-hover">Telefone</li>
+    <li (click)="tipoEmail()" id="email" class="itens-hover">Email</li>
+    <li (click)="tipoChaveAleatoria()" id="chaveAleatoria" class="itens-hover">
+      Chave Aleatória
+    </li>
+  </div>
+
+  <form class="form-principal" [formGroup]="dadosPix" (ngSubmit)="enviar()">
+    <input
+      class="inputs"
+      [type]="type"
+      name="chavePix"
+      id="chavePix"
+      placeholder="Chave Pix"
+      formControlName="chavePix"
+      required
+    />
+    <app-mensagem
+      *ngIf="
+        dadosPix.get('chavePix')?.errors?.required &&
+        dadosPix.get('chavePix')?.touched
+      "
+      mensagem="Chave Pix Obrigatória"
+    >
+    </app-mensagem>
+    <input
+      [(ngModel)]="valor"
+      class="inputs"
+      type="number"
+      name="valorPix"
+      id="valorPix"
+      placeholder="Valor Pix"
+      formControlName="valorPix"
+      required
+    />
+    <button
+    class="button" type="submit"
+    >Enviar</button>
+  </form>
+</main>

@@ -1,0 +1,16 @@
+<main class="container">
+  <form
+    class="form-principal"
+    [formGroup]="dadosDeposito"
+    (ngSubmit)="deposita()"
+  >
+    <input
+      class="inputs"
+      type="number"
+      placeholder="Valor Depósito"
+      formControlName="valor"
+      [(ngModel)]="valor"
+    />
+    <button class="button">Depositar</button>
+  </form>
+</main>

@@ -1,0 +1,44 @@
+<main class="principal">
+  <form class="form-principal" #loginForm="ngForm" (ngSubmit)="logar()">
+    <div>
+      <label class="label" for="usuario">Usuário:</label>
+      <input
+        [(ngModel)]="usuario"
+        class="inputs"
+        type="text"
+        name="usuario"
+        id="usuario"
+        #campoUsuario="ngModel"
+        required
+        placeholder="usuario"
+      />
+      <app-mensagem
+        *ngIf="campoUsuario.invalid && campoUsuario.touched"
+        mensagem="Usuário Obrigatório"
+      ></app-mensagem>
+    </div>
+    <div>
+      <label class="label" for="senha">Senha:</label>
+      <input
+        [(ngModel)]="senha"
+        class="inputs"
+        type="password"
+        name="senha"
+        id="senha"
+        #campoSenha="ngModel"
+        required
+        placeholder="123"
+      />
+      <app-mensagem
+        *ngIf="campoSenha.invalid && campoUsuario.touched"
+        mensagem="Senha Obrigatória"
+      ></app-mensagem>
+    </div>
+    <button type="submit" class="btn" [disabled]="loginForm.invalid">
+      Logar
+    </button>
+    <p class="texto">
+      Ja é um usuário?<a [routerLink]="['/novousuario']"> Faça o Login!</a>
+    </p>
+  </form>
+</main>

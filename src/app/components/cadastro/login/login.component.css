@@ -1,0 +1,116 @@
+body, html {
+  height: 100%;
+}
+
+.principal {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: 65vh;
+  backdrop-filter: saturate(180%) blur(6px);
+  border-radius: 10px;
+}
+
+.form-principal {
+  padding: 17% 6%;
+}
+
+.label {
+  margin-top: 10px;
+}
+
+.inputs {
+  margin: 4% auto;
+  width: 75%;
+  height: 3vh;
+  display: block;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.inputs:focus {
+  outline: none;
+}
+
+.btn {
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  border: none;
+  border-radius: 2px;
+  width: 25%;
+  padding: 0.5rem;
+}
+
+.btn:hover {
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.texto {
+  margin-top: 10%;
+}
+
+.texto a {
+  text-decoration: none;
+}
+
+.inputs::placeholder {
+  color: black;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+
+  .principal {
+    margin: 5% auto;
+    width: 75%;
+    height: 30%;
+  }
+
+  .inputs {
+    margin: 12% auto;
+    width: 90%;
+    height: 10%;
+    font-size: 1.4rem;
+  }
+
+  .label {
+    font-size: 1.6rem;
+  }
+
+  .form-principal {
+    padding: 10% 6%;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+  }
+}
+
+/* Celular */
+@media screen and (max-width: 600px) {
+  .principal {
+    margin: 5% auto;
+    width: 80%;
+    height: 80vh;
+  }
+
+  .form-principal {
+    padding: 21.5% 0%;
+  }
+
+  .inputs {
+    margin: 8% auto;
+    width: 80%;
+    height: 5vh;
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 30%;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,59 @@
+<main class="container">
+  <div class="itens">
+    <li id="vivo" (click)="vivo()" class="itens-hover" [style]="stylePadrao">
+      <img class="vivo" src="assets/img/vivo.png" alt="logo vivo" />
+    </li>
+    <li id="tim" (click)="tim()" class="itens-hover">
+      <img src="assets/img/tim.png" alt="logo tim" />
+    </li>
+    <li id="oi" (click)="oi()" class="itens-hover">
+      <img src="assets/img/oi.png" alt="logo oi" />
+    </li>
+    <li id="claro" (click)="claro()" class="itens-hover">
+      <img src="assets/img/claro.png" alt="logo claro" />
+    </li>
+  </div>
+
+  <form [formGroup]="dadosRecarga" (ngSubmit)="recarregar()">
+    <input
+      class="inputs"
+      [type]="type"
+      name="numero"
+      id="numero"
+      placeholder="(99)99999-9999"
+      formControlName="numero"
+      required
+    />
+    <app-mensagem
+      *ngIf="
+        dadosRecarga.get('numero')?.errors?.required &&
+        dadosRecarga.get('numero')?.touched
+      "
+      mensagem="Número Obrigatório"
+    ></app-mensagem>
+    <app-mensagem
+      *ngIf="
+        dadosRecarga.controls['numero'].hasError('minlength')
+      "
+      mensagem="Número Inválido"
+    ></app-mensagem>
+    <app-mensagem
+      *ngIf="
+        dadosRecarga.controls['numero'].hasError('maxlength')
+      "
+      mensagem="Número Inválido"
+    ></app-mensagem>
+    <input
+    [(ngModel)]="valor"
+      class="inputs"
+      type="number"
+      name="valorRecarga"
+      id="valorRecarga"
+      placeholder="Valor"
+      formControlName="valorRecarga"
+      required
+    />
+
+    <button class="button" type="submit">Recarregar</button>
+  </form>
+</main>

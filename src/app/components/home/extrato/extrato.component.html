@@ -1,0 +1,19 @@
+<main class="container">
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th class="detalhes">Tipo</th>
+        <th class="detalhes">Valor</th>
+        <th class="detalhes">Data/Hora</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="conteudo" *ngFor="let dado of dados">
+        <td class="valores">{{ dado.tipo }}</td>
+        <td class="valores">{{ dado.valor | currency: 'BRL' }}</td>
+        <td class="valores">{{ dado.data | date : 'short' : '' : 'pt-BR' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

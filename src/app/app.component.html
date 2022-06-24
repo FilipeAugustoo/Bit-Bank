@@ -1,0 +1,6 @@
+<header class="menu-principal">
+  <h1 class="logo"><a [routerLink]="['/home']"><img src="assets/img/logo.png" alt="Logo Do Banco" /></a></h1>
+  <h2 *ngIf="mostrarSaldo"> Saldo <br> {{saldo | currency: 'BRL'}}</h2>
+</header>
+
+<router-outlet></router-outlet>

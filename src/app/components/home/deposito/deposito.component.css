@@ -1,0 +1,78 @@
+.container {
+  margin: 3% auto;
+  text-align: center;
+  width: 50%;
+  height: 74vh;
+  backdrop-filter: saturate(180%) blur(6px);
+  border-radius: 10px;
+}
+
+.form-principal {
+  padding: 5% 0;
+}
+
+.inputs {
+  width: 85%;
+  height: 3vh;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+  text-decoration-color: black;
+}
+
+.inputs:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+.inputs::placeholder {
+  color: black;
+}
+
+.button {
+  background-color: gray;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 5px;
+  margin: 2% auto;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+/* Tablet */
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 75%;
+    height: 78vh;
+    margin: 5% auto;
+  }
+
+  .form-principal {
+    padding: 32% 0;
+  }
+
+  .inputs {
+    width: 80%;
+    height: 5vh;
+  }
+
+  .button {
+    font-size: 1.8rem;
+    margin: 4% auto;
+  }
+}
+
+/* Celular */
+
+@media screen and (max-width: 600px) {
+  .form-principal {
+    padding: 48% 0;
+  }
+}

@@ -1,0 +1,50 @@
+header {
+  width: 100%;
+  height: 30%;
+}
+
+.menu-principal {
+  height: 20%;
+  background-color: gray;
+}
+
+.logo img {
+  width: 5%;
+  margin-top: 0.5%;
+}
+
+.logo {
+  text-align: center;
+}
+
+h2 {
+  position: absolute;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: -5%;
+  margin-left: 85%;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-principal {
+    height: 10vh;
+    background-color: gray;
+  }
+
+  .logo img {
+    width: 3rem;
+    margin-top: 0.5%;
+  }
+
+  h2 {
+    margin-top: -7%;
+    margin-left: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    margin-top: -10%;
+    margin-left: 70%;
+  }
+}
