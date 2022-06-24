@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from '../../cadastro/novo-usuario/novo-usuario';
 
 import { TokenService } from './../../cadastro/auth/Token.service';
@@ -10,7 +11,8 @@ import { TokenService } from './../../cadastro/auth/Token.service';
 export class SaldoService {
 
   constructor(private http:HttpClient,
-    private tokenService:TokenService) { }
+    private tokenService:TokenService,
+    private route: Router) { }
 
 
   readonly URL = 'http://localhost:8080/usuario';
@@ -23,8 +25,8 @@ export class SaldoService {
       saldo: valor
     }
 
-    this.http.patch(`${this.URL}/${usuario}/saldo-adicionar/`, valorSaldo, {headers: HEADER}).subscribe(() => {
-      window.location.reload();
+    this.http.patch(`${this.URL}/${usuario}/saldo?tipo=add`, valorSaldo, {headers: HEADER}).subscribe(() => {
+      this.route.navigate(['/home']);
     });
   }
 
@@ -34,7 +36,7 @@ export class SaldoService {
       saldo: valor
     }
 
-    this.http.patch(`${this.URL}/${usuario}/saldo-remover/`, valorSaldo, {headers: HEADER}).subscribe(() => {
+    this.http.patch(`${this.URL}/${usuario}/saldo?tipo=rem`, valorSaldo, {headers: HEADER}).subscribe(() => {
       window.location.reload();
     });
   }

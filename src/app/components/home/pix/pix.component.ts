@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Extrato } from '../extrato/extrato.model';
 import { AppComponent } from './../../../app.component';
 import { UsuarioService } from './../../cadastro/login/Usuario.service';
 import { ExtratoService } from './../extrato/extrato.service';
@@ -78,11 +79,11 @@ export class PixComponent implements OnInit {
     if (this.saldo.saldo >= this.valor) {
       this.saldoService.removeSaldo(this.valor, this.usuario.usuario())
       if (this.dadosPix.valid) {
-        const valorEmitir = {
-            tipo: 'Pix',
+        const valorEmitir: Extrato = {
+            tipo: "Pix",
             valor: this.valor
         }
-        this.service.recebeValores(valorEmitir)
+        this.service.recebeValores(valorEmitir);
         this.router.navigate(['/home/extrato']);
       } else {
         alert('Faltam Dados!');

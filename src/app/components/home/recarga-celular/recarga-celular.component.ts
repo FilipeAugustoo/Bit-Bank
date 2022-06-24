@@ -3,6 +3,7 @@ import {
   FormBuilder, FormGroup, Validators
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Extrato } from '../extrato/extrato.model';
 import { AppComponent } from './../../../app.component';
 import { UsuarioService } from './../../cadastro/login/Usuario.service';
 import { ExtratoService } from './../extrato/extrato.service';
@@ -82,7 +83,7 @@ export class RecargaCelularComponent implements OnInit {
     if (this.saldo.saldo >= this.valor) {
       this.saldoService.removeSaldo(this.valor, this.usuarioService.usuario());
       if (this.dadosRecarga.valid) {
-        const valorEmitir = {
+        const valorEmitir: Extrato = {
           tipo: 'Recarga Celular',
           valor: this.valor
         }

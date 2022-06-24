@@ -15,6 +15,7 @@ export class AppComponent {
 
   public mostrarSaldo: boolean = false;
   public saldo;
+  public usuario = this.authService.usuario();
 
 
 

@@ -16,9 +16,9 @@ export class ExtratoService {
     private tokenService:TokenService) { }
 
   public recebeValores(extrato: Extrato): void {
-    extrato.data = new Date();
-    //this.recebeDados.push(extrato);
-   }
+    var HEADER: HttpHeaders = this.tokenService.header();
+    this.http.post(this.URL, extrato, {headers: HEADER}).subscribe(() => {});
+  }
 
   public extrato(usuario: string) {
     var HEADER: HttpHeaders = this.tokenService.header();

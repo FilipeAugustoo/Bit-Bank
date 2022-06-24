@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { UsuarioService } from '../../cadastro/login/Usuario.service';
 import { SaldoService } from './../home/saldo.service';
 
@@ -16,7 +15,6 @@ export class DepositoComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private service: SaldoService,
-    private route: Router,
     private authService: UsuarioService
   ) { }
 
@@ -30,8 +28,6 @@ export class DepositoComponent implements OnInit {
 
   public deposita() {
     this.service.adicionaSaldo(this.valor, this.authService.usuario());
-    this.valor = 0;
-    this.route.navigate(['/home']);
   }
 
 }

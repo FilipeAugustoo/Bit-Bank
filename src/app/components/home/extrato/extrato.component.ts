@@ -11,7 +11,7 @@ import { ExtratoService } from './extrato.service';
 })
 export class ExtratoComponent {
   constructor(private service: ExtratoService, private usuarioService:UsuarioService) {
-    this.service.extrato(this.usuarioService.usuario()).subscribe(r => console.log(r));
+    this.service.extrato(this.usuarioService.usuario()).subscribe(r => this.dados = r);
   }
   @Input() dados: Extrato[];
 
