@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from './../../../../environments/environment.prod';
 import { Usuario } from './novo-usuario';
 
 @Injectable({
@@ -10,14 +11,14 @@ export class NovoUsuarioService {
 
   public cadastraNovoUsuario(novoUsuario: Usuario) {
     return this.httpClient.post(
-      `http://localhost:8080/usuario`,
+      `${environment.apiURL}/usuario`,
       novoUsuario
     );
   }
 
   public verificaUsuarioExistente(nomeUsuario: string) {
     return this.httpClient.get(
-      `http://localhost:8080/usuario/existe/${nomeUsuario}`
+      `${environment.apiURL}/usuario/existe/${nomeUsuario}`
     );
   }
 }

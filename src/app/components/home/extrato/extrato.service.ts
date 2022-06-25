@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, Output } from '@angular/core';
+import { environment } from './../../../../environments/environment.prod';
 import { TokenService } from './../../cadastro/auth/Token.service';
 import { Extrato } from './extrato.model';
 
@@ -8,7 +9,6 @@ import { Extrato } from './extrato.model';
   providedIn: 'root'
 })
 export class ExtratoService {
-  readonly URL = 'http://localhost:8080/extrato';
 
   @Output() recebeDados: Extrato[];
 
@@ -17,11 +17,11 @@ export class ExtratoService {
 
   public recebeValores(extrato: Extrato): void {
     var HEADER: HttpHeaders = this.tokenService.header();
-    this.http.post(this.URL, extrato, {headers: HEADER}).subscribe(() => {});
+    this.http.post(`${environment.apiURL}/extrato`, extrato, {headers: HEADER}).subscribe(() => {});
   }
 
   public extrato(usuario: string) {
     var HEADER: HttpHeaders = this.tokenService.header();
-    return this.http.get<Extrato[]>(`${this.URL}/${usuario}`, {headers: HEADER});
+    return this.http.get<Extrato[]>(`${environment.apiURL}/extrato/${usuario}`, {headers: HEADER});
   }
 }

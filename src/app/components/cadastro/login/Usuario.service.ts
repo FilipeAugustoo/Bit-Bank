@@ -5,6 +5,7 @@ import jwt_decode from 'jwt-decode';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Usuario } from '../novo-usuario/novo-usuario';
+import { environment } from './../../../../environments/environment.prod';
 import { SaldoService } from './../../home/home/saldo.service';
 import { TokenService } from './../auth/Token.service';
 
@@ -25,8 +26,6 @@ export class UsuarioService {
     }
   }
 
-  private URL = 'http://localhost:8080/login';
-
   private usuarioAutenticado: boolean = false;
   public mostraSaldo = new EventEmitter<boolean>();
   private usuarioLogado;
@@ -39,7 +38,7 @@ export class UsuarioService {
     }
 
     return this.http.post(
-      this.URL,
+      `${environment.apiURL}/login`,
       dados,
       {observe: 'response', responseType: 'text' }
     ).pipe(
