@@ -1,5 +1,5 @@
 {
-  "name": "lipeBank",
+  "name": "bit-bank",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy:ghdocs": "ng build --prod --output-path docs --base-href /meu-projeto-spa-banco/"
+    "deploy:ghdocs": "ng build --prod --output-path docs --base-href /Bit-Bank/"
   },
   "private": true,
   "dependencies": {
