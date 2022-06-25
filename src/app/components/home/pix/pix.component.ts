@@ -15,7 +15,7 @@ import { SaldoService } from './../home/saldo.service';
 export class PixComponent implements OnInit {
   public dadosPix!: FormGroup;
   public valor;
-  public stylePadrao = 'border: 3px solid #838383;';
+  readonly stylePadrao = 'border: 3px solid #f7931a;';
 
   @Input() type = 'number';
 
@@ -46,32 +46,32 @@ export class PixComponent implements OnInit {
   public tipoCpf(): void {
     this.resetaCor('cnpj', 'telefone', 'email', 'chaveAleatoria');
     this.type = 'number';
-    document.getElementById('cpf').style.border = '3px solid #838383';
+    document.getElementById('cpf').style.border = '3px solid #f7931a';
   }
 
   public tipoCnpj(): void {
     this.resetaCor('cpf', 'telefone', 'email', 'chaveAleatoria');
     this.type = 'number';
-    document.getElementById('cnpj').style.border = '3px solid #838383';
+    document.getElementById('cnpj').style.border = '3px solid #f7931a';
   }
 
   public tipoTelefone(): void {
     this.resetaCor('cnpj', 'cpf', 'email', 'chaveAleatoria');
     this.type = 'number';
-    document.getElementById('telefone').style.border = '3px solid #838383';
+    document.getElementById('telefone').style.border = '3px solid #f7931a';
   }
 
   public tipoEmail(): void {
     this.resetaCor('cnpj', 'telefone', 'cpf', 'chaveAleatoria');
     this.type = 'email';
-    document.getElementById('email').style.border = '3px solid #838383';
+    document.getElementById('email').style.border = '3px solid #f7931a';
   }
 
   public tipoChaveAleatoria(): void {
     this.resetaCor('cnpj', 'telefone', 'email', 'cpf');
     this.type = 'text';
     document.getElementById('chaveAleatoria').style.border =
-      '3px solid #838383';
+      '3px solid #f7931a';
   }
   /*-----------------------------------------*/
 

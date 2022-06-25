@@ -1,30 +1,40 @@
 .container {
-  margin: 3% 25%;
-  text-align: center;
-  width: 50%;
-  height: 74vh;
-  backdrop-filter: saturate(180%) blur(6px);
+  margin: auto;
+  padding: 2%;
+  max-width: 50%;
   border-radius: 10px;
+  background-color: blue;
 }
 
-.itens li {
-  display: inline-block;
+.itens {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.itens-hover {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid black;
+  max-width: 10%;
+  max-height: 10%;
+  padding: 40%;
   text-align: center;
-  width: 18%;
-  height: 18vh;
-  margin: 4% 1.5%;
-  padding: 30px 0px;
-  box-sizing: border-box;
-  border: 3px solid #000000;
-  border-radius: 10px;
-  font-size: 2rem;
-  vertical-align: middle;
+  border-radius: 5%;
+  font-size: 1.5rem;
+}
+
+.itens-hover img {
+  margin-bottom: 25%;
 }
 
 .itens-hover:hover {
-  transform: scale(1.1);
-  transition: 0.5s;
-  cursor: default;
+  border-color: #f7931a;
+  transition: 0.3s ease-in-out;
 }
 
 .inputs {
