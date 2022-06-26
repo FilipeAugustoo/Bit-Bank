@@ -17,7 +17,7 @@ import { SaldoService } from './../home/saldo.service';
 export class RecargaCelularComponent implements OnInit {
   public dadosRecarga!: FormGroup;
   public valor;
-  public stylePadrao = 'border: 3px solid #838383;';
+  public stylePadrao = 'border: 3px solid #f7931a;';
 
   @Input() type = 'number';
 
@@ -52,30 +52,10 @@ export class RecargaCelularComponent implements OnInit {
     });
   }
 
-  private resetaCor(tipo1, tipo2, tipo3): void {
-    document.getElementById(tipo1).style.border = '3px solid #000000';
-    document.getElementById(tipo2).style.border = '3px solid #000000';
-    document.getElementById(tipo3).style.border = '3px solid #000000';
-  }
-
-  public vivo(): void {
-    this.resetaCor('oi', 'tim', 'claro');
-    document.getElementById('vivo').style.border = '3px solid #838383';
-  }
-
-  public tim(): void {
-    this.resetaCor('vivo', 'oi', 'claro');
-    document.getElementById('tim').style.border = '3px solid #838383';
-  }
-
-  public oi(): void {
-    this.resetaCor('tim', 'vivo', 'claro');
-    document.getElementById('oi').style.border = '3px solid #838383';
-  }
-
-  public claro(): void {
-    this.resetaCor('oi', 'vivo', 'tim');
-    document.getElementById('claro').style.border = '3px solid #838383';
+  public mudaCor(atributo: string) {
+    this.stylePadrao = '';
+    document.querySelectorAll('.itens-hover').forEach(r => r.classList.remove('ativo'));
+    document.querySelector(atributo).classList.add('ativo');
   }
   /*-----------------------------------------*/
 

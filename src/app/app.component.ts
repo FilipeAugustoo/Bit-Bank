@@ -10,18 +10,25 @@ import { SaldoService } from './components/home/home/saldo.service';
 export class AppComponent {
   constructor(
     private service: SaldoService,
-    private authService: UsuarioService
+    private usuarioService: UsuarioService
   ) {}
 
-  public mostrarSaldo: boolean = false;
+  public mostraParametros: boolean = false;
   public saldo;
-  public usuario = this.authService.usuario();
+  public usuario;
 
 
 
   ngOnInit() {
-    this.authService.mostraSaldo.subscribe(mostrar => this.mostrarSaldo = mostrar);
+    this.usuarioService.mostraParametros.subscribe(mostrar => this.mostraParametros = mostrar);
 
     this.service.saldo.subscribe(saldo => this.saldo = saldo);
+    this.usuarioService.retornaUsuario().subscribe(user => this.usuario = user['sub']);
   }
+
+  public logout() {
+    this.usuarioService.logout();
+  }
+
+
 }

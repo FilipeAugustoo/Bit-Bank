@@ -27,7 +27,7 @@ export class UsuarioService {
   }
 
   private usuarioAutenticado: boolean = false;
-  public mostraSaldo = new EventEmitter<boolean>();
+  readonly mostraParametros = new EventEmitter<boolean>(false);
   private usuarioLogado;
 
   private autenticar(user: string, password: string): Observable<HttpResponse<any>> {
@@ -53,24 +53,18 @@ export class UsuarioService {
 
     this.autenticar(usuario, senha).subscribe(
       () => {
-        console.log('Autenticado com sucesso');
         this.route.navigate(['/home']);
         this.usuarioAutenticado = true;
       },
       (error) => {
         alert('Usuario ou senha invalido');
         console.log(error);
-        this.mostraSaldo.emit(false);
       }
     );
   }
 
   public usuarioEstaAutenticado(): boolean {
     return this.usuarioAutenticado;
-  }
-
-  public usuario(): string {
-    return this.usuarioLogado;
   }
 
   private decodificaJWT() {
@@ -90,13 +84,17 @@ export class UsuarioService {
   }
 
   public logout() {
+    this.mostraParametros.emit(false);
     this.tokenService.excluiToken();
-    this.usuarioSubject.next({});
+    this.route.navigate(['/login']);
+  }
+
+  public usuario() {
+    return this.usuarioLogado;
   }
 
   public estaLogado() {
-    this.mostraSaldo.emit(true);
-    this.SaldoService.mostraSaldo(this.usuario());
+    this.SaldoService.mostraSaldo(this.usuarioLogado);
     return this.tokenService.possuiToken();
   }
 }

@@ -13,7 +13,6 @@ export class TokenService {
   public salvarToken(token: string): void {
     token = "Bearer " + token;
     localStorage.setItem(KEY, token);
-    console.log(token);
   }
 
   public header(): HttpHeaders {

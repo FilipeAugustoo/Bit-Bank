@@ -15,7 +15,7 @@ import { SaldoService } from './../home/saldo.service';
 export class PixComponent implements OnInit {
   public dadosPix!: FormGroup;
   public valor;
-  readonly stylePadrao = 'border: 3px solid #f7931a;';
+  public stylePadrao = 'border: 3px solid #f7931a;';
 
   @Input() type = 'number';
 
@@ -35,43 +35,25 @@ export class PixComponent implements OnInit {
     });
   }
 
-  private resetaCor(tipo1, tipo2, tipo3, tipo4): void {
-    document.getElementById(tipo1).style.border = '3px solid #000000';
-    document.getElementById(tipo2).style.border = '3px solid #000000';
-    document.getElementById(tipo3).style.border = '3px solid #000000';
-    document.getElementById(tipo4).style.border = '3px solid #000000';
-  }
-
   /*-----------------------------------------*/
-  public tipoCpf(): void {
-    this.resetaCor('cnpj', 'telefone', 'email', 'chaveAleatoria');
+  public tipoNumber(): void {
+    this.stylePadrao = '';
     this.type = 'number';
-    document.getElementById('cpf').style.border = '3px solid #f7931a';
-  }
-
-  public tipoCnpj(): void {
-    this.resetaCor('cpf', 'telefone', 'email', 'chaveAleatoria');
-    this.type = 'number';
-    document.getElementById('cnpj').style.border = '3px solid #f7931a';
-  }
-
-  public tipoTelefone(): void {
-    this.resetaCor('cnpj', 'cpf', 'email', 'chaveAleatoria');
-    this.type = 'number';
-    document.getElementById('telefone').style.border = '3px solid #f7931a';
   }
 
   public tipoEmail(): void {
-    this.resetaCor('cnpj', 'telefone', 'cpf', 'chaveAleatoria');
+    this.stylePadrao = '';
     this.type = 'email';
-    document.getElementById('email').style.border = '3px solid #f7931a';
   }
 
   public tipoChaveAleatoria(): void {
-    this.resetaCor('cnpj', 'telefone', 'email', 'cpf');
+    this.stylePadrao = '';
     this.type = 'text';
-    document.getElementById('chaveAleatoria').style.border =
-      '3px solid #f7931a';
+  }
+
+  public mudarCor(atributo: string) {
+    document.querySelectorAll('.itens-hover').forEach(r => r.classList.remove('ativo'));
+    document.querySelector(atributo).classList.add('ativo');
   }
   /*-----------------------------------------*/
 

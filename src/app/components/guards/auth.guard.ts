@@ -17,10 +17,13 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean> | boolean {
 
     if(this.service.estaLogado()) {
+      this.service.mostraParametros.emit(true);
       return true;
-    } else {
-      this.route.navigate(['/login'])
-      return false;
     }
+
+    this.service.mostraParametros.emit(false);
+    this.route.navigate(['/login'])
+    return false;
+
   }
 }
