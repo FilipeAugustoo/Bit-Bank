@@ -1,20 +1,20 @@
 <main class="container">
   <div class="itens">
-    <li id="vivo" (click)="vivo()" class="itens-hover" [style]="stylePadrao">
-      <img class="vivo" src="assets/img/vivo.png" alt="logo vivo" />
+    <li id="vivo" (click)="mudaCor('.vivo')" class="itens-hover vivo" [style]="stylePadrao">
+      <img src="assets/img/vivo.png" alt="logo vivo" />
     </li>
-    <li id="tim" (click)="tim()" class="itens-hover">
+    <li id="tim" (click)="mudaCor('.tim')" class="itens-hover tim">
       <img src="assets/img/tim.png" alt="logo tim" />
     </li>
-    <li id="oi" (click)="oi()" class="itens-hover">
+    <li id="oi" (click)="mudaCor('.oi')" class="itens-hover oi">
       <img src="assets/img/oi.png" alt="logo oi" />
     </li>
-    <li id="claro" (click)="claro()" class="itens-hover">
+    <li id="claro" (click)="mudaCor('.claro')" class="itens-hover claro">
       <img src="assets/img/claro.png" alt="logo claro" />
     </li>
   </div>
 
-  <form [formGroup]="dadosRecarga" (ngSubmit)="recarregar()">
+  <form class="form-principal" [formGroup]="dadosRecarga" (ngSubmit)="recarregar()">
     <input
       class="inputs"
       [type]="type"

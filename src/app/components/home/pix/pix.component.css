@@ -3,7 +3,6 @@
   padding: 2%;
   max-width: 50%;
   border-radius: 10px;
-  background-color: blue;
 }
 
 .itens {
@@ -22,14 +21,11 @@
   border: 3px solid black;
   max-width: 10%;
   max-height: 10%;
-  padding: 40%;
+  padding: 45%;
   text-align: center;
   border-radius: 5%;
   font-size: 1.5rem;
-}
-
-.itens-hover img {
-  margin-bottom: 25%;
+  background-color: transparent;
 }
 
 .itens-hover:hover {
@@ -37,10 +33,20 @@
   transition: 0.3s ease-in-out;
 }
 
+.ativo {
+  border-color: #f7931a;
+}
+
+.form-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .inputs {
   width: 80%;
-  height: 3vh;
-  margin: 1.5% 9.5%;
+  height: 3%;
+  margin: 2% 0;
   text-align: center;
   font-size: 1.5rem;
   background-color: transparent;
@@ -59,7 +65,7 @@
 }
 
 .button {
-  background-color: gray;
+  background-color: #f7931a;
   border: none;
   border-radius: 5px;
   font-size: 1.5rem;
@@ -70,10 +76,6 @@
 .button:hover {
   transform: scale(1.1);
   transition: 0.5s;
-}
-
-.ativo {
-  border-color: red;
 }
 
 /* Tablet */

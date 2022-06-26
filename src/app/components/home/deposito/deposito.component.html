@@ -11,6 +11,13 @@
       formControlName="valor"
       [(ngModel)]="valor"
     />
+    <app-mensagem
+      *ngIf="
+        dadosDeposito.get('valor')?.errors?.required &&
+        dadosDeposito.get('valor')?.touched
+      "
+      mensagem="Valor Obrigatório"
+    ></app-mensagem>
     <button class="button">Depositar</button>
   </form>
 </main>

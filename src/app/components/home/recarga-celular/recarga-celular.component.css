@@ -1,43 +1,54 @@
 .container {
-  margin: 3% 25%;
-  text-align: center;
-  width: 50%;
-  height: 74vh;
-  backdrop-filter: saturate(180%) blur(6px);
+  margin: auto;
+  padding: 2%;
+  max-width: 50%;
   border-radius: 10px;
 }
 
-.itens li {
-  display: inline-block;
-  text-align: center;
-  width: 20%;
-  height: 20vh;
-  vertical-align: top;
-  margin: 3% 8%;
-  box-sizing: border-box;
-  border: 3px solid #000000;
-  border-radius: 10px;
+.itens {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
 }
 
-.itens-hover:hover {
-  transform: scale(1.1);
-  transition: 0.5s;
-  cursor: default;
+.itens-hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid black;
+  max-width: 30%;
+  max-height: 30%;
+  padding: 10%;
+  border-radius: 5%;
 }
 
-.itens li img {
+.itens-hover img {
+  margin-bottom: 25%;
   width: 60%;
   margin: 20%;
 }
 
-.itens li img.vivo {
-  margin: 37% 20%;
+.itens-hover:hover {
+  border-color: #f7931a;
+  transition: 0.3s ease-in-out;
+}
+
+.ativo {
+  border-color: #f7931a;
+}
+
+.form-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .inputs {
   width: 80%;
-  height: 3vh;
-  margin: 1.5% 9.5%;
+  height: 3%;
+  margin: 2% 0;
   text-align: center;
   font-size: 1.5rem;
   background-color: transparent;
@@ -56,7 +67,7 @@
 }
 
 .button {
-  background-color: gray;
+  background-color: #f7931a;
   border: none;
   border-radius: 5px;
   font-size: 1.5rem;

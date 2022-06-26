@@ -1,9 +1,8 @@
 header {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-
+  justify-items: center;
 }
 
 .menu-principal {
@@ -20,8 +19,7 @@ header {
 }
 
 .logo {
-  position: relative;
-  text-align: center;
+  grid-column: 2;
 }
 
 .usuario {

@@ -1,10 +1,10 @@
 <header class="menu-principal">
-  <div class="usuario">
-    <h3>{{ usuario }}</h3>
-    <a href="#">logout</a>
-  </div>
+  <h2 *ngIf="mostraParametros"> Saldo <br> {{saldo | currency: 'BRL'}}</h2>
   <h1 class="logo"><a [routerLink]="['/home']"><img src="assets/img/bank.png" alt="Logo Do Banco" /></a></h1>
-  <h2 *ngIf="mostrarSaldo"> Saldo <br> {{saldo | currency: 'BRL'}}</h2>
+  <div class="usuario">
+    <h3 *ngIf="mostraParametros">{{ usuario }}</h3>
+    <a *ngIf="mostraParametros" (click)="logout()" href="#">logout</a>
+  </div>
 </header>
 
 <router-outlet></router-outlet>

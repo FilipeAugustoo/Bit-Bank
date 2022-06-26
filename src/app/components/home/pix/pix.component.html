@@ -1,12 +1,13 @@
 <main class="container">
   <div class="itens">
-    <li (click)="tipoCpf()" id="cpf" class="itens-hover" [style]="stylePadrao">CPF</li>
-    <li (click)="tipoCnpj()" id="cnpj" class="itens-hover">CNPJ</li>
-    <li (click)="tipoTelefone()" id="telefone" class="itens-hover">Telefone</li>
-    <li (click)="tipoEmail()" id="email" class="itens-hover">Email</li>
-    <li (click)="tipoChaveAleatoria()" id="chaveAleatoria" class="itens-hover">
+    <button (click)="mudarCor('.cpf')" (click)="tipoNumber()" class="itens-hover cpf" [style]="stylePadrao">CPF</button>
+    <button (click)="mudarCor('.cnpj')" (click)="tipoNumber()" class="itens-hover cnpj">CNPJ</button>
+    <button (click)="mudarCor('.telefone')" (click)="tipoNumber()" class="itens-hover telefone">Telefone</button>
+    <button (click)="mudarCor('.email')" (click)="tipoEmail()" class="itens-hover email">Email</button>
+    <button (click)="mudarCor('.ca')" (click)="tipoChaveAleatoria()" class="itens-hover ca">
       Chave Aleatória
-    </li>
+    </button>
+
   </div>
 
   <form class="form-principal" [formGroup]="dadosPix" (ngSubmit)="enviar()">
