@@ -3,7 +3,6 @@
   text-align: center;
   width: 50%;
   height: 65vh;
-  backdrop-filter: saturate(180%) blur(6px);
   border-radius: 10px;
 }
 
@@ -32,7 +31,7 @@
 }
 
 .btn {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #f7931a;
   font-size: 1rem;
   border: none;
   border-radius: 2px;
@@ -42,7 +41,7 @@
 
 .btn:hover {
   transition: 0.5s;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #dd851a;
 }
 
 .texto {

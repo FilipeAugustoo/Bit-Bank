@@ -1,5 +1,5 @@
 <header class="menu-principal">
-  <h2 *ngIf="mostraParametros"> Saldo <br> {{saldo | currency: 'BRL'}}</h2>
+  <h2 *ngIf="mostraParametros"> Saldo <br> {{saldo | currency: '₿'}}</h2>
   <h1 class="logo"><a [routerLink]="['/home']"><img src="assets/img/bank.png" alt="Logo Do Banco" /></a></h1>
   <div class="usuario">
     <h3 *ngIf="mostraParametros">{{ usuario }}</h3>

@@ -10,7 +10,6 @@
         id="usuario"
         #campoUsuario="ngModel"
         required
-        placeholder="usuario"
       />
       <app-mensagem
         *ngIf="campoUsuario.invalid && campoUsuario.touched"
@@ -27,7 +26,6 @@
         id="senha"
         #campoSenha="ngModel"
         required
-        placeholder="123"
       />
       <app-mensagem
         *ngIf="campoSenha.invalid && campoUsuario.touched"
@@ -38,7 +36,7 @@
       Logar
     </button>
     <p class="texto">
-      Ja é um usuário?<a [routerLink]="['/novousuario']"> Faça o Login!</a>
+      Não tem uma conta?<a [routerLink]="['/novousuario']"> Faça o Cadastro!</a>
     </p>
   </form>
 </main>
