@@ -11,7 +11,7 @@ export class NovoUsuarioService {
 
   public cadastraNovoUsuario(novoUsuario: Usuario) {
     return this.httpClient.post(
-      `${environment.apiURL}/usuario`,
+      `${environment.apiURL}/usuario/cadastrar`,
       novoUsuario
     );
   }
