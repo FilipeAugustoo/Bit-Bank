@@ -1,8 +1,8 @@
 header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
   justify-items: center;
+  align-items: center;
 }
 
 .menu-principal {
@@ -11,7 +11,6 @@ header {
 }
 
 .logo img {
-  text-align: center;
   max-width: 100px;
   max-height: 100px;
   width: auto;
@@ -43,26 +42,31 @@ h2 {
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  .menu-principal {
-    height: 10vh;
-    background-color: gray;
-  }
-
-  .logo img {
-    width: 3rem;
-    margin-top: 0.5%;
-  }
-
-  h2 {
-    margin-top: -7%;
-    margin-left: 80%;
-  }
-}
-
 @media screen and (max-width: 600px) {
+  .logo img {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+  }
+
+  .menu-principal {
+    height: 15%;
+  }
+
   h2 {
-    margin-top: -10%;
-    margin-left: 70%;
+    font-size: 1rem;
+  }
+
+  h1, h2 {
+    margin-left: 5%;
+  }
+
+  .usuario h3 {
+    font-size: 1rem;
+  }
+
+  .usuario {
+    margin-right: 5%;
   }
 }

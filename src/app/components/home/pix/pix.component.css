@@ -79,50 +79,40 @@
 }
 
 /* Tablet */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
   .container {
-    width: 80%;
-    height: 80vh;
-    margin: 4% auto;
-  }
-
-  .itens li {
-    width: 25%;
-    padding: 5% 0%;
+    max-width: 90%;
   }
 
   .inputs {
-    margin: 3% 9.5%;
+    width: 90%;
+    margin: 5% 0;
   }
 
-  .form-principal {
-    margin: auto;
+  .button {
+    font-size: 2rem;
+
   }
 }
-
 
 /* Celular */
 @media screen and (max-width: 600px) {
   .container {
-    margin: 11% auto;
-    width: 85%;
-    height: 75vh;
+    max-width: 90%;
   }
 
-  .itens li {
-    font-size: 1.4rem;
-    width: 30%;
-    margin: 4% 1%;
-    padding: 10% 0%;
+  .itens {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .itens-hover {
+    max-width: 25%;
+    max-height: 25%;
+    font-size: 1rem;
   }
 
   .inputs {
-    width: 80%;
-    height: 3vh;
-    margin: 5% 9.5%;
-  }
-
-  .form-principal {
-    margin: 3% auto;
+    width: 90%;
+    margin: 8% 0;
   }
 }

@@ -49,32 +49,30 @@
 
 /* Tablet */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
   .container {
-    width: 75%;
-    height: 78vh;
-    margin: 5% auto;
-  }
-
-  .form-principal {
-    padding: 32% 0;
-  }
-
-  .inputs {
-    width: 80%;
-    height: 5vh;
+    max-width: 80%;
+    padding: 10% 2%;
   }
 
   .button {
-    font-size: 1.8rem;
-    margin: 4% auto;
+    font-size: 2rem;
   }
 }
 
 /* Celular */
 
 @media screen and (max-width: 600px) {
-  .form-principal {
-    padding: 48% 0;
+  .container {
+    max-width: 90%;
+    padding: 10% 2%;
+  }
+
+  .inputs {
+    margin-bottom: 5%;
+  }
+
+  .button {
+    font-size: 1.5rem;
   }
 }

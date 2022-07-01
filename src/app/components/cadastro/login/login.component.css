@@ -1,37 +1,53 @@
-body, html {
-  height: 100%;
-}
-
-.principal {
+.container {
   margin: auto;
-  text-align: center;
-  width: 50%;
-  height: 65vh;
+  padding: 2%;
+  max-width: 50%;
   border-radius: 10px;
 }
 
-.form-principal {
-  padding: 17% 6%;
+h1 {
+  margin-top: 5%;
+  font-size: 2rem;
+  text-align: center;
 }
 
-.label {
-  margin-top: 10px;
+.form-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10%;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin: 5% 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+app-mensagem {
+  margin-top: 3%;
 }
 
 .inputs {
-  margin: 4% auto;
-  width: 75%;
-  height: 3vh;
-  display: block;
+  width: 80%;
+  height: 3%;
+  text-align: center;
+  font-size: 1.5rem;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
-  text-align: center;
-  font-size: 1rem;
 }
 
 .inputs:focus {
   outline: none;
+  text-decoration: none;
+}
+
+.inputs::placeholder {
+  color: black;
 }
 
 .btn {
@@ -56,60 +72,59 @@ body, html {
   text-decoration: none;
 }
 
-.inputs::placeholder {
-  color: black;
-}
-
 /* Tablet */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
+  .container {
+    max-width: 90%;
+  }
 
-  .principal {
-    margin: 5% auto;
-    width: 75%;
-    height: 30%;
+  h1 {
+    font-size: 2.5rem;
   }
 
   .inputs {
-    margin: 12% auto;
-    width: 90%;
-    height: 10%;
-    font-size: 1.4rem;
+    width: 100%;
+    font-size: 2rem;
   }
 
-  .label {
-    font-size: 1.6rem;
-  }
-
-  .form-principal {
-    padding: 10% 6%;
+  .input-container {
+    margin: 8% 0;
   }
 
   .btn {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    width: 30%;
+  }
+
+  .texto {
+    font-size: 1.3rem;
   }
 }
 
 /* Celular */
 @media screen and (max-width: 600px) {
-  .principal {
-    margin: 5% auto;
-    width: 80%;
-    height: 80vh;
+  .container {
+    max-width: 90%;
   }
 
   .form-principal {
-    padding: 21.5% 0%;
+    padding: 10% 5%;
+  }
+
+  .texto {
+    font-size: 0.9rem;
   }
 
   .inputs {
-    margin: 8% auto;
-    width: 80%;
-    height: 5vh;
-    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  .input-container {
+    margin: 10% 0;
   }
 
   .btn {
-    width: 30%;
     font-size: 1.5rem;
+    width: 30%;
   }
 }

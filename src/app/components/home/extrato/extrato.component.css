@@ -30,13 +30,13 @@
 
 /* Tablet */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
   .container {
     margin: 5% auto;
-    width: 75%;
+    width: 80%;
   }
 
   .tabela {
-    width: 60%;
+    width: 100%;
   }
 }

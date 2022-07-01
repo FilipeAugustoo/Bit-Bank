@@ -1,7 +1,7 @@
-<main class="principal">
+<main class="container">
+  <h1>Logar</h1>
   <form class="form-principal" #loginForm="ngForm" (ngSubmit)="logar()">
-    <div>
-      <label class="label" for="usuario">Usuário:</label>
+    <div class="input-container">
       <input
         [(ngModel)]="usuario"
         class="inputs"
@@ -9,6 +9,7 @@
         name="usuario"
         id="usuario"
         #campoUsuario="ngModel"
+        placeholder="Usuário"
         required
       />
       <app-mensagem
@@ -16,8 +17,7 @@
         mensagem="Usuário Obrigatório"
       ></app-mensagem>
     </div>
-    <div>
-      <label class="label" for="senha">Senha:</label>
+    <div class="input-container">
       <input
         [(ngModel)]="senha"
         class="inputs"
@@ -25,6 +25,7 @@
         name="senha"
         id="senha"
         #campoSenha="ngModel"
+        placeholder="Senha"
         required
       />
       <app-mensagem

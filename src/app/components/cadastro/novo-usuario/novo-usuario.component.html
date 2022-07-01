@@ -1,20 +1,20 @@
-<main class="principal">
+<main class="container">
+  <h1>Cadastrar-se</h1>
   <form
     class="form-principal"
     [formGroup]="novoUsuarioForm"
     (submit)="cadastrar()"
   >
-    <div>
-      <label class="label" for="usuario">Usuário:</label>
+    <div class="input-container">
       <input
         class="inputs"
         type="text"
         name="usuario"
         id="usuario"
         formControlName="usuario"
+        placeholder="Usuário"
       />
-    </div>
-    <app-mensagem
+      <app-mensagem
       *ngIf="
         novoUsuarioForm.get('usuario')?.errors?.minusculo &&
         novoUsuarioForm.get('usuario')?.touched
@@ -34,14 +34,15 @@
       *ngIf="novoUsuarioForm.get('usuario')?.errors?.usuarioExistente"
       mensagem="Usuário Já Existe"
     ></app-mensagem>
-    <div>
-      <label class="label" for="senha">Senha:</label>
+    </div>
+    <div class="input-container">
       <input
         class="inputs"
         type="password"
         name="senha"
         id="senha"
         formControlName="senha"
+        placeholder="Senha"
       />
       <app-mensagem
         *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario"
