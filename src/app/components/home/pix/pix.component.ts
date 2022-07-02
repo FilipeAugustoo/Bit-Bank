@@ -59,8 +59,8 @@ export class PixComponent implements OnInit {
 
   public enviar(): void {
     if (this.saldo.saldo >= this.valor) {
-      this.saldoService.removeSaldo(this.valor, this.usuario.usuario())
       if (this.dadosPix.valid) {
+        this.saldoService.removeSaldo(this.valor, this.usuario.usuario())
         const valorEmitir: Extrato = {
             tipo: "Pix",
             valor: this.valor
@@ -73,6 +73,5 @@ export class PixComponent implements OnInit {
     } else {
       alert('Saldo Insuficiente!')
     }
-
   }
 }

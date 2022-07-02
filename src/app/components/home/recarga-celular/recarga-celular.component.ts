@@ -45,12 +45,6 @@ export class RecargaCelularComponent implements OnInit {
   }
 
   /*-----------------------------------------*/
-  private reset(): void {
-    this.dadosRecarga = this.formBuilder.group({
-      numero: [''],
-      valorRecarga: [''],
-    });
-  }
 
   public mudaCor(atributo: string) {
     this.stylePadrao = '';
@@ -61,8 +55,8 @@ export class RecargaCelularComponent implements OnInit {
 
   public recarregar(): void {
     if (this.saldo.saldo >= this.valor) {
-      this.saldoService.removeSaldo(this.valor, this.usuarioService.usuario());
       if (this.dadosRecarga.valid) {
+        this.saldoService.removeSaldo(this.valor, this.usuarioService.usuario());
         const valorEmitir: Extrato = {
           tipo: 'Recarga Celular',
           valor: this.valor
@@ -75,6 +69,5 @@ export class RecargaCelularComponent implements OnInit {
     } else {
       alert('Saldo Insuficiente')
     }
-    this.reset();
   }
 }
