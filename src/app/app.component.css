@@ -23,7 +23,6 @@ header {
 
 .usuario {
   width: 20%;
-  text-align: center;
 }
 
 .usuario h3 {
@@ -43,6 +42,10 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
+  header {
+    justify-items: flex-start;
+  }
+
   .logo img {
     max-width: 80px;
     max-height: 80px;
@@ -67,6 +70,6 @@ h2 {
   }
 
   .usuario {
-    margin-right: 5%;
+    margin-left: 10%;
   }
 }
