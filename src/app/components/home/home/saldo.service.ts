@@ -24,6 +24,7 @@ export class SaldoService {
     }
 
     this.http.patch(`${environment.apiURL}/usuario/${usuario}/saldo?tipo=add`, valorSaldo, {headers: HEADER}).subscribe(() => {
+      window.location.reload();
       this.route.navigate(['/home']);
     });
   }
