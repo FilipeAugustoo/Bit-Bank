@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:8080',
+  apiURL: 'https://restapi-cadastro-production.up.railway.app',
 };
