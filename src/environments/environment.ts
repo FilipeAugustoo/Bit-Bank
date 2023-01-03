@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiURL: 'https://aw-cadastro-api.herokuapp.com',
+  apiURL: 'http://localhost:8080',
 };
